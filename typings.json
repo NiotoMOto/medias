@@ -1,0 +1,11 @@
+{
+  "name": "starter-pack",
+  "version": false,
+  "ambientDependencies": {
+    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#0d66537e353802f996a3f67ca1b711f63835f9e7",
+    "whatwg-fetch": "github:DefinitelyTyped/DefinitelyTyped/whatwg-fetch/whatwg-fetch.d.ts#0d66537e353802f996a3f67ca1b711f63835f9e7",
+    "redux": "github:DefinitelyTyped/DefinitelyTyped/redux/redux.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "react-redux": "github:DefinitelyTyped/DefinitelyTyped/react-redux/react-redux.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "noLib": true,
+    "noResolve": true,
+    "experimentalDecorators": true
+  },
+  "filesGlob": [
+    "./typings/main/**/*.d.ts",
+    "./definitions/**/*.d.ts",
+    "./node_modules/typescript/lib/lib.es6.d.ts",
+    "./node_modules/immutable/dist/immutable.d.ts",
+    "./common/**/*.+(ts|tsx)"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  },
+  "compileOnSave": false,
+  "files": [
+    "./typings/main/ambient/react-dom/index.d.ts",
+    "./typings/main/ambient/react-redux/index.d.ts",
+    "./typings/main/ambient/react/index.d.ts",
+    "./typings/main/ambient/redux/index.d.ts",
+    "./typings/main/ambient/whatwg-fetch/index.d.ts",
+    "./definitions/google-map-react.d.ts",
+    "./definitions/main.d.ts",
+    "./definitions/material-ui.d.ts",
+    "./definitions/react-google-maps.d.ts",
+    "./definitions/react-tap-event-plugin.d.ts",
+    "./node_modules/typescript/lib/lib.es6.d.ts",
+    "./node_modules/immutable/dist/immutable.d.ts",
+    "./common/components/Layout.tsx",
+    "./common/containers/Home.tsx",
+    "./common/fake/services.ts",
+    "./common/index.tsx",
+    "./common/reducers/default.ts",
+    "./common/services/util.ts",
+    "./common/stores/default.ts"
+  ]
+}
