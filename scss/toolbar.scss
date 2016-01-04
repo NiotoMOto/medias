@@ -1,0 +1,26 @@
+.main-toolbar {
+  background-color: white !important;
+  border: 1px solid #dce0e0;
+  position: fixed;
+  top: 0;
+  z-index: 300;
+
+  .brand-title {
+    margin-left: 10px;
+    h2 {
+      margin: 10px;
+      cursor: pointer;
+      &:hover {
+        color: #546E7A;
+      }
+    }
+  }
+
+  .seach {
+    margin-left: 20px;
+  }
+}
+
+.brand-title {
+  margin-left: 10px;
+}
