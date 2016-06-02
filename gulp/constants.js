@@ -2,16 +2,10 @@
 
 const plugins = require('gulp-load-plugins')();
 
-exports.tsProject = plugins.typescript.createProject('tsconfig.json', {
-  module: 'commonjs',
-  typescript: require('typescript'),
-});
-
-
 exports.paths = {
   common: {
     root: './common',
-    react: './common/**/*.{ts,tsx}',
+    react: './common/**/*.{js,jsx}',
     entry: './common/index.js',
     json: './common/**/*.json',
   },

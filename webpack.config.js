@@ -14,7 +14,7 @@ const paths = {
 module.exports = {
   entry: paths.entry,
   resolve: {
-    extensions: ['', '.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
   },
   output: {
     path: paths.js,
@@ -24,13 +24,24 @@ module.exports = {
   devServer: {
     contentBase: paths.js,
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+  ],
   module: {
     loaders: [
       {
-        test: /\.ts(x)?$/,
-        exclude: '/node_modules/',
-        loaders: ['babel-loader?presets[]=es2015', 'ts-loader'],
-      },
-    ],
-  },
+        test: /\.jsx?$/,
+        loaders: [ 'babel' ],
+        exclude: [/node_modules/],
+        include: __dirname,
+      }, {
+        test: /\.json$/,
+        loaders: [ 'json' ],
+        exclude: /node_modules/,
+        include: __dirname,
+      }
+    ]
+  }
 };

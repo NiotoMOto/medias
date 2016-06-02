@@ -43,19 +43,19 @@ gulp.task('copyIcons', ['iconfont'], () => {
 })
 
 gulp.task('compile', ['node:kill'], () =>
-  constants.tsProject.src()
+  gulp.src(constants.paths.common.react)
     // .pipe(plugins.cached('compiling'))
-    .pipe(plugins.typescript(constants.tsProject)
-      .on('error', function(err) {
-        plugins.util.log(err);
-        this.emit('end');
-      }))
+    // .pipe(plugins.typescript(constants.tsProject)
+    //   .on('error', function(err) {
+    //     plugins.util.log(err);
+    //     this.emit('end');
+    //   }))
     .pipe(plugins.babel()
       .on('error', function(err) {
         plugins.util.log(err);
         this.emit('end');
       }))
-    .pipe(gulp.dest(constants.paths.server.root)));
+    .pipe(gulp.dest(constants.paths.server.common)));
 
 gulp.task('copy', ['node:kill'], () =>
   gulp.src(constants.paths.common.json)
