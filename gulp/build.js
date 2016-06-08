@@ -13,9 +13,8 @@ gulp.task('copy:build', ['clean'], () =>
 
 gulp.task('compile:build', ['clean'], () =>
   constants.tsProject.src()
-    .pipe(plugins.typescript(constants.tsProject))
     .pipe(plugins.babel())
-    .pipe(gulp.dest(constants.paths.server.root)));
+    .pipe(gulp.dest(constants.paths.server.common)));
 
 gulp.task('scss:build', ['clean'], () =>
   gulp.src(constants.paths.scss)
