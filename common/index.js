@@ -8,12 +8,13 @@ import * as injectTapEventPlugin from 'react-tap-event-plugin';
 
 import { Provider } from 'react-redux';
 
-injectTapEventPlugin();
+injectTapEventPlugin.default();
 
 const { paths, state = {} } = window.__INIT__;
 
 const store = require(paths.store).default(state);
-const Container = require(paths.container).default as React.ClassicComponentClass<any>;
+console.log(`./containers/${paths.container}`);
+const Container = require(`${paths.container}`).default;
 
 ReactDom.render(
   <Provider store={store}>

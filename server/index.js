@@ -9,6 +9,8 @@ const mount = require('koa-mount');
 const serve = require('koa-static');
 const noCache = require('koa-no-cache');
 
+const data = require('./data');
+
 const middlewares = require('./middlewares');
 const routes = require('./routes');
 
