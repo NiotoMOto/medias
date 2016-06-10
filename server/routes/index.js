@@ -3,6 +3,11 @@
 const koa = require('koa');
 const router = require('koa-router')();
 const rp = require('request-promise');
+const apiRoutes = require('./api')(router);
+const parse = require('co-busboy');
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
 
 const main = koa();
 
@@ -12,20 +17,19 @@ router.get('/', function* () {
   });
 });
 
-router.get('/deputes', function* () {
-  const deputes = yield rp('http://localhost:4001/api/v1/elus?limit=30').then(json => {
-    return JSON.parse(json);
-  });
-  this.body = yield this.render('Deputes', {
-    props: { deputes: deputes },
-    scripts: ['https://maps.googleapis.com/maps/api/js'],
-  });
-});
+router.post('/uploadImages', function* () {
+  console.log('UPLOAD');
+  var parts = parse(this);
+  console.log(parts);
+  var part;
 
-router.get('/services/:id', function* () {
-  this.body = yield this.render('Service', {
-    props: { serviceId: this.params.id }
-  });
+  while (part = yield parts) {
+    var stream = fs.createWriteStream(path.join(os.tmpdir(), Math.random().toString()));
+    part.pipe(stream);
+    console.log('uploading %s -> %s', part.filename, stream.path);
+  }
+
+  this.redirect('/');
 });
 
 main.use(router.routes())

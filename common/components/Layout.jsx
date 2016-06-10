@@ -17,7 +17,7 @@ interface IStates {
   open?: boolean;
 }
 
-const darkMuiTheme = getMuiTheme(darkBaseTheme);
+const darkMuiTheme = getMuiTheme();
 
 export default class Layout extends Component<IProps, IStates> {
   state = {
